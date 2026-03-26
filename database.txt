@@ -1,0 +1,26 @@
+           Exercise 1: Basic CRUD
+1. Add new student
+  db.students.insertOne({name: "aman", roll_no: 11 })
+
+2. View all students
+ db.students.find()
+
+3. Find student by email
+ db.students.find({ email: "aman123@gmail.com" })
+
+4. Update student GPA
+ db.students.updateOne({ email: "raj234@gmail.com" }, { $set: { gpa: 2.8 } })
+
+5. Delete student
+ db.students.deleteOne({ _id:  ObjectId('69c561bd4d2e5775db9fb095')})
+
+
+
+           Exercise 2: Advanced Queries
+
+1. Find all students with GPA between 3.0 and 3.5
+ db.students.find({gpa: { $gte: 3.0, $lte: 3.5 }})
+
+2. Get top 10 students by GPA
+ db.students.find().sort({ gpa: -1 }).limit(10)
+ 
